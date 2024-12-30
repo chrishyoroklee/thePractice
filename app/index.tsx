@@ -2,9 +2,15 @@ import { useTheme } from "@emotion/react";
 import styled from "@emotion/native";
 import { TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 
 export default function HomeScreen() {
   const theme = useTheme();
+  const router = useRouter();
+
+  const handleNavigate = () => {
+    router.push("/playback");
+  };
 
   return (
     <Root>
@@ -14,6 +20,7 @@ export default function HomeScreen() {
       <CreateNewContainer>
         <TouchableOpacity
           style={{ flexDirection: "row", alignItems: "center" }}
+          onPress={handleNavigate}
         >
           <CreateNewText>Create New</CreateNewText>
           <Ionicons
