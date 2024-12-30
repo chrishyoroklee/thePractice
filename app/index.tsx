@@ -1,21 +1,26 @@
-import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import { useTheme } from "@emotion/react";
+import styled from "@emotion/native";
 
 export default function HomeScreen() {
+  const theme = useTheme(); 
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Welcome to the Home Screen!</Text>
-    </View>
+    <Root>
+      <Title>thePractice</Title>
+    </Root>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-});
+const Root = styled.View(({ theme }) => ({
+  flex: 1,
+  alignItems: "center",
+  justifyContent: "center",
+  backgroundColor: theme.colors.background.screen,
+}));
+
+const Title = styled.Text(({ theme }) => ({
+  fontSize: theme.typography.fontSize.large,
+  color: theme.colors.text.primary,
+  fontWeight: "bold",
+}));

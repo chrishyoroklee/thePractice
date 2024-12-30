@@ -1,19 +1,22 @@
+import React from "react";
 import { StyleSheet, View } from "react-native";
 import { Slot } from "expo-router";
+import { ThemeProvider } from "@emotion/react"; 
+import theme from "../theme/theme"; 
 
 export default function RootLayout() {
   return (
-    <View style={styles.container}>
-      {/* This ensures that the correct screen renders */}
-      <Slot />
-    </View>
+    <ThemeProvider theme={theme}>
+      <View style={styles.container}>
+        {/* Render child screens */}
+        <Slot />
+      </View>
+    </ThemeProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
   },
 });
