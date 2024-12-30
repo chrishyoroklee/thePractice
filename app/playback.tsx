@@ -3,6 +3,7 @@ import styled from "@emotion/native";
 import { TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
+import Icon from "react-native-vector-icons/AntDesign";
 
 export default function PlaybackScreen() {
   const theme = useTheme();
@@ -14,6 +15,12 @@ export default function PlaybackScreen() {
 
   return (
     <Container>
+      <Button>
+        <TouchableOpacity
+        onPress={handleNavigate}>
+          <Icon name="closecircle" size={24} color={theme.colors.icon.primary} />
+        </TouchableOpacity>
+      </Button>
       <Title>Minor Pop Asc. 5th</Title>
 
       <Melody source={require("../assets/images/melody1.png")}/>
@@ -34,6 +41,13 @@ const Title = styled.Text(({ theme }) => ({
   alignItems: "center",
   justifyContent: "center",
   color: theme.colors.text.secondary,
+}));
+
+const Button = styled.View(({ theme }) => ({
+  position: "absolute", 
+  top: theme.spacing(30), 
+  right: theme.spacing(2), 
+  backgroundColor: theme.colors.background.screen,
 }));
 
 const Melody = styled.Image({
