@@ -1,7 +1,6 @@
 import { useTheme } from "@emotion/react";
 import styled from "@emotion/native";
 import { TouchableOpacity } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import Icon from "react-native-vector-icons/AntDesign";
 
