@@ -27,6 +27,7 @@ export default function PlaybackScreen() {
     </Container>
   );
 }
+
 const Container = styled.View(({ theme }) => ({
   flex: 1,
   justifyContent: "center",
